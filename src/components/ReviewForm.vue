@@ -3,18 +3,28 @@ import { reactive } from 'vue'
 
 const emit = defineEmits(['review-submitted'])
 
-const getDefaultFormData = () => ({
+const review = reactive({
   name: '',
   content: '',
   rating: null
 })
 
-const review = reactive(getDefaultFormData())
-
 const onSubmit = () => {
-  const reviewData = JSON.parse(JSON.stringify(review))
-  emit('review-submitted', reviewData)
-  Object.assign(review, getDefaultFormData())
+  if (review.name === '' || review.content === '' || review.rating === null) {
+    alert('Review is incomplete. Please fill out every field.')
+    return
+  }
+
+  const productReview = {
+    name: review.name,
+    content: review.content,
+    rating: review.rating
+  }
+  emit('review-submitted', productReview)
+
+  review.name = ''
+  review.content = ''
+  review.rating = null
 }
 </script>
 
