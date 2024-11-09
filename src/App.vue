@@ -39,7 +39,7 @@ const updateImage = (variantImage) => image.value = variantImage
         </ul>
         <div 
           v-for="variant in variants" 
-          key="variant.key"
+          :key="variant.id"
           @mouseover="updateImage(variant.image)"
           class="color-circle"
           :style="{ backgroundColor: variant.color }"
