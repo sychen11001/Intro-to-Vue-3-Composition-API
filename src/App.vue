@@ -4,6 +4,8 @@ import socksGreenImage from './assets/images/socks_green.jpeg'
 import socksBlueImage from './assets/images/socks_blue.jpeg'
 
 const product = ref('Socks')
+const brand = ref('Vue Mastery')
+
 const image = ref(socksGreenImage)
 const inStock = ref(false)
   
