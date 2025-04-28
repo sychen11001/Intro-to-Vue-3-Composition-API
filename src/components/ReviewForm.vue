@@ -1,13 +1,3 @@
-<script>
-import { reactive } from 'vue'
-
-const review = reactive({
-  name: '',
-  content: '',
-  rating: null
-})
-</script>
-
 <template>
   <form class="review-form">
     <h3>Leave a review</h3>
